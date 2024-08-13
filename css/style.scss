@@ -1,0 +1,706 @@
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// 공통
+$fontFamily: 'GmarketSansMedium';
+$basicColor: #333;
+$WiteBgColor: #fff;
+$siteWidth: 1080px;
+
+
+* {
+  font-family: $fontFamily;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: $basicColor;
+  text-underline-position: under;
+  /* underline 띄어주기 */
+
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: $siteWidth;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.banner-bar {
+  height: 32px;
+  background-color: #fafafa;
+}
+
+/* 탑바 구현 시작 */
+
+.top-bar {
+  min-width: $siteWidth;
+  height: 80px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: $WiteBgColor;
+  position: relative;
+}
+
+// 상단고정
+.top-bar.fixed {
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  right: 0;
+}
+
+
+// 날개
+.showback {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 0;
+    background-color: $WiteBgColor;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  &:hover::before {
+    height: 400px;
+  }
+}
+
+// 상단 메뉴 구현 
+
+.menu {
+  margin-left: auto;
+
+  .menu-gnb {
+    display: flex;
+
+    li {
+      a {
+        padding: 0 25px;
+        position: relative;
+      }
+
+      .menu-sub {
+        display: none;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        min-height: 400px;
+        max-width: $siteWidth;
+        margin: 0 auto;
+        z-index: 9999999;
+
+      }
+    }
+  }
+}
+
+// 메뉴 밑줄
+
+.menu {
+  .menu-gnb {
+    >li:hover {
+      >a {
+        text-decoration: underline;
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -30px;
+          width: 100%;
+          height: 1px;
+          background-color: $basicColor;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+.menu-gnb {
+  li {
+    &:hover {
+      .menu-sub {
+        display: block;
+        padding: 60px;
+        line-height: 2;
+        text-align: center;
+      }
+    }
+
+    .sub-item {
+      ul {
+        display: flex;
+        justify-content: space-between;
+        white-space: nowrap;
+
+        li {
+          a {
+            font-size: 17px;
+            font-weight: 500;
+
+            &:hover {
+              text-decoration: underline;
+            }
+
+          }
+
+          ul {
+            display: flex;
+            flex-direction: column;
+
+            li {
+              a {
+                font-size: 13px;
+
+                &:hover {
+                  text-decoration: underline;
+
+                }
+              }
+            }
+
+          }
+        }
+      }
+    }
+
+  }
+}
+
+
+// 드롭다운 구현 
+
+.dropdown {
+
+  .dropdown-box {
+    .dropdown-btn {
+      background-color: rgba(244, 244, 244, 0.8);
+      color: #444;
+      border: 1px solid rgba(229, 229, 229, 0.8);
+      padding: 10px 20px;
+      border-radius: 50px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+
+      &::after {
+        content: "";
+        width: 12px;
+        height: 12px;
+        display: inline-block;
+        background-image: url(../imgs/svg_line_arrow_down.svg);
+        background-repeat: no-repeat;
+        margin-left: 10px;
+        transition: transform .3s;
+      }
+
+      &.act {
+        &::after {
+          transform: rotate(-180deg);
+        }
+      }
+    }
+  }
+}
+
+
+.dropdown {
+  position: relative;
+
+  .dropdown-menu {
+    position: absolute;
+    border-radius: 6px;
+    top: 100%;
+    margin-top: 30px;
+    width: 240px;
+    overflow: hidden;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $WiteBgColor;
+    display: none;
+    z-index: 9999999;
+
+    ul {
+      li {
+        a {
+          display: block;
+          text-align: left;
+          padding: 10px 24px;
+          font-size: 13px;
+
+          &::after {
+            //아이콘
+            content: '';
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background: url(../imgs/svg_line_outlink.svg);
+            background-size: 12px 12px;
+            margin-left: 4px;
+            vertical-align: middle;
+          }
+        }
+
+        &:first-child {
+          >a {
+            padding-top: 15px;
+
+          }
+        }
+
+        &:last-child {
+          >a {
+            padding-bottom: 15px;
+
+          }
+        }
+
+        &:hover {
+          >a {
+            text-decoration: underline;
+            background-color: #f7f7f7;
+          }
+        }
+      }
+    }
+
+    &.act {
+      display: block;
+      border: 1px solid #ccc;
+    }
+  }
+}
+
+.icon {
+  margin-left: 25px;
+  display: flex;
+  align-items: center;
+
+  .globe-icon {
+    display: inline-block;
+    background-image: url(../imgs/icon_eng.svg);
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    text-indent: -9999px;
+
+  }
+
+  a:hover {
+    .globe-icon {
+      opacity: 0.3;
+    }
+  }
+
+}
+
+
+// 메인 섹션 배너 구현
+
+.main-banner {
+  position: relative;
+
+  .container {
+    background-image: url(../imgs/main-bg3.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 884px;
+    position: relative;
+    /* 텍스트 */
+
+    .content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin-top: 10rem;
+
+      .title {
+        h2 {
+          font-size: 49px;
+          font-weight: 500;
+        }
+      }
+
+      .sub-title {
+        font-size: 16px;
+        font-weight: 200;
+        line-height: 1.95;
+        padding: 1rem 0;
+
+        .sub1 {
+          padding-bottom: 1rem;
+        }
+      }
+
+      .links {
+        margin-top: 2rem;
+
+        ul {
+          display: flex;
+          justify-content: space-between;
+
+          .link-store {
+            display: flex;
+            align-items: center;
+            width: 178px;
+            height: 56px;
+            font-weight: 600;
+            background-color: #f7f7f7;
+            border-radius: 15px;
+
+            &:hover {
+              text-decoration: underline;
+
+            }
+
+            .icon {
+              display: inline-block;
+              background-image: url(../imgs/img_kabang_220615.png);
+              background-repeat: no-repeat;
+              width: 24px;
+              height: 24px;
+              margin-right: 5px;
+              margin-top: -4px;
+
+              &.g-icon {
+                background-position: -341px -292px;
+              }
+
+              &.a-icon {
+                background-position: -371px -292px;
+              }
+            }
+          }
+        }
+      }
+
+    }
+  }
+
+  .bg-color {
+    position: absolute;
+    background-color: #ffef6b;
+    width: 100%;
+    top: 0;
+    height: 648px;
+    z-index: -1;
+  }
+
+}
+
+//배너 컨텐츠 구현
+
+.banner-wrap {
+  .banner-type {
+    height: 750px;
+
+    .content {
+      display: flex;
+      height: 100%;
+      width: $siteWidth;
+      margin: 0 auto;
+
+      .img-box {
+        width: 45%;
+      }
+
+      .ctt-box {
+        width: 55%;
+
+        .main-ctt {
+          h3 {
+            font-size: 40px;
+            font-weight: 500;
+          }
+
+          p {
+            margin-top: 24px;
+            font-size: 15px;
+            font-weight: 100;
+            line-height: 1.7;
+            color: #666;
+          }
+
+        }
+
+        .btn {
+          .icon {
+            margin-left: 10px;
+
+          }
+
+          a {
+            background-color: #f6f6f6;
+            border-radius: 10px;
+            font-size: 16px;
+            color: $basicColor;
+            width: 258px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          .txt:hover {
+            text-decoration: underline;
+          }
+        }
+
+      }
+    }
+  }
+}
+
+
+// 컨텐츠 1 
+
+.banner-type {
+  &.type1 {
+    display: flex;
+
+    .content {
+      .img-box {
+        position: relative;
+        left: 20px;
+
+        img {
+          width: 473px;
+          position: absolute;
+          top: 36px;
+        }
+      }
+
+      .ctt-box {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        left: 100px;
+
+        .main-ctt {
+          position: absolute;
+          top: 210px;
+        }
+
+        .btn {
+          margin-top: 10rem;
+        }
+      }
+    }
+
+
+  }
+
+}
+
+
+// 컨텐츠 2
+
+
+.banner-type {
+  &.type2 {
+
+    .content {
+      .img-box {
+        position: relative;
+        left: 40px;
+
+        img {
+          position: absolute;
+          width: 409px;
+          top: 20px;
+        }
+      }
+
+      .ctt-box {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        left: 70px;
+
+        .main-ctt {
+          position: absolute;
+          top: 210px;
+        }
+
+        .btn {
+          display: flex;
+          margin-top: 20rem;
+          gap: 5px;
+
+          a {
+            width: 158px;
+          }
+        }
+
+        .sub-img {
+          margin-top: 40px;
+
+          img {
+            width: 440px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// 컨텐츠 3
+
+.banner-type {
+  &.type3 {
+    .content {
+      .img-box {
+        position: relative;
+        left: 50px;
+
+        img {
+          position: absolute;
+          width: 459px;
+          top: 85px;
+        }
+      }
+
+      .ctt-box {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        left: 120px;
+
+        .main-ctt {
+          position: absolute;
+          top: 210px;
+        }
+      }
+
+      .btn {
+        display: flex;
+        margin-top: 13rem;
+
+        a {
+          width: 258px;
+        }
+      }
+
+    }
+  }
+}
+
+
+//컨텐츠 4
+
+.banner-type {
+  &.type4 {
+    .content {
+      .ctt-box {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        left: 120px;
+
+        .main-ctt {
+          position: absolute;
+          top: 230px;
+        }
+      }
+
+      .btn {
+        display: flex;
+        margin-top: 13rem;
+
+        a {
+          width: 258px;
+        }
+      }
+
+      .img-box {
+        position: relative;
+
+        img {
+          position: absolute;
+          width: 492px;
+          top: 150px;
+        }
+      }
+    }
+  }
+}
+
+// 컨텐츠 5
+
+.banner-type {
+  &.type5 {
+    background-image: url(../imgs/home_map.png);
+    background-repeat: no-repeat;
+    background-position: -20%;
+    background-size: calc(50% - 100px);
+
+    .content {
+      .img-box {
+        position: relative;
+        margin-left: 100px;
+        margin-right: 100px;
+
+        img {
+          position: absolute;
+          width: 408px;
+          top: 20px;
+        }
+      }
+
+      .ctt-box {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        left: 20px;
+
+        .main-ctt {
+          position: absolute;
+          top: 196px;
+        }
+
+      }
+
+      .btn {
+        display: flex;
+        margin-top: 20rem;
+
+        a {
+          width: 258px;
+        }
+      }
+    }
+  }
+}
+
+
+// 대출박스 구현 
+

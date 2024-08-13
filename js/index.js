@@ -1,3 +1,5 @@
+AOS.init();
+
 
 const dropdownBox = document.querySelector('.dropdown-box');
 const dropdownMenu = document.querySelector('.dropdown-menu');
