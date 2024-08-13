@@ -1138,3 +1138,206 @@ a {
 }
 
 //footer 하단 구현 
+
+
+.footer-info {
+  background-color: #eee;
+
+  .content {
+    width: $siteWidth;
+    margin: 0 auto;
+
+    .links {
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 20px 0 16px;
+
+        li {
+          &:nth-last-child(-n+2) {
+            margin-left: 10px;
+          }
+
+          &:nth-last-child(-n+1) {
+            flex: 1;
+            justify-content: flex-start;
+          }
+
+          &:nth-last-child(4) {
+            a:after {
+              content: none;
+
+            }
+          }
+
+          &:last-child {
+            a:after {
+              content: none;
+            }
+          }
+
+
+          a {
+            color: #666;
+            font-size: 12px;
+            padding: 0 10px;
+            position: relative;
+            line-height: 2;
+
+
+            &.txt-bold {
+              font-weight: bold;
+              color: $basicColor;
+            }
+
+            &:hover {
+              text-decoration: underline;
+            }
+
+            &:after {
+              content: "";
+              width: 1px;
+              height: 10px;
+              margin: 6px 15px;
+              position: absolute;
+              background-color: #d8d8d8;
+            }
+
+
+          }
+
+        }
+      }
+
+    }
+
+    .busi,
+    .copyright {
+      font-size: 12px;
+      text-align: left;
+      padding-left: 10px;
+
+      span {
+        color: #888;
+      }
+    }
+
+    .busi {
+      .txt-number {
+        color: $basicColor;
+        ;
+      }
+    }
+
+    .copyright {
+      padding-top: 6px;
+    }
+
+  }
+}
+
+// footer 하단 링크 
+
+
+.footer {
+  padding-top: 18px;
+  padding-bottom: 18px;
+  display: flex;
+
+  .licenses {
+    display: flex;
+    gap: 30px;
+    flex-grow: 1;
+    padding-left: 10px;
+
+    a {
+      display: flex;
+      align-items: center;
+    }
+
+    .webaccessibility,
+    .webtrust {
+      display: flex;
+      align-items: center;
+    }
+
+    .webaccessibility {
+      img {
+        width: 48px;
+        height: 32px;
+        margin-right: 10px;
+      }
+    }
+
+    .webtrust {
+      img {
+        width: 42px;
+        height: 41px;
+        margin-right: 10px;
+      }
+    }
+
+    span {
+      font-size: 13px;
+      font-weight: 600;
+      color: #666;
+    }
+
+  }
+
+  .sns-list {
+    display: flex;
+    align-items: center;
+
+    ul {
+      display: flex;
+
+      li {
+        margin-right: 10px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        a {
+          display: block;
+          width: 24px;
+          height: 24px;
+
+          span {
+            display: inline-block;
+            background-image: url(../imgs/ico_sns.png);
+            background-repeat: no-repeat;
+            background-size: 290px 170px;
+            width: 24px;
+            height: 24px;
+            text-indent: -9999px;
+          }
+
+        }
+
+        .sns-icon {
+          .facebook {
+            background-position: 0 -90px;
+          }
+
+          .instagram {
+            background-position: -191px -138px;
+          }
+
+          .youtube {
+            background-position: -90px -90px;
+          }
+
+          .brunch {
+            background-position: -217px -138px;
+          }
+        }
+      }
+    }
+  }
+
+
+
+}
