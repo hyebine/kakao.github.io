@@ -35,3 +35,22 @@ gnbli.forEach(i => {
     document.querySelector('.top-bar').classList.remove('showback');
   });
 });
+
+
+
+
+// 스와이퍼
+
+const swiper = new Swiper('.check-box .swiper', {
+
+  loop: true,
+  slidesPerView: 3,
+  centeredSlides: true,
+  spaceBetween: 0,
+
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+});

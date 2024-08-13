@@ -704,3 +704,437 @@ a {
 
 // 대출박스 구현 
 
+.loan {
+  height: 930px;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    .sky {
+      .blue {
+        height: 0;
+      }
+    }
+  }
+
+  .sky {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #333b58;
+
+    .blue {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #559cde;
+      transition: height .5s;
+    }
+
+    .moon {
+      position: absolute;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      left: calc(50% + 450px);
+      top: 200px;
+      overflow: hidden;
+
+      .base {
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        left: calc(50% + 450px);
+        background-color: #ffdc00;
+        transition: background-color .5s .5s;
+      }
+
+      &:hover {
+        .base {
+          background-color: $WiteBgColor;
+        }
+
+        .shadow {
+          top: -23%;
+          left: -23%;
+          background-color: #333b58;
+        }
+      }
+
+      .shadow {
+        position: absolute;
+        top: -100%;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        transform: top .5s .5s, left .5s .5s;
+      }
+    }
+
+
+
+  }
+
+}
+
+
+// 텍스트 
+.loan {
+  .sky {
+    .content {
+      position: relative;
+      margin: 0 auto;
+      text-align: center;
+      z-index: 1;
+
+      .ctt-box {
+        padding-top: 160px;
+
+        h3 {
+          font-size: 40px;
+          font-weight: 600;
+          color: $WiteBgColor;
+          line-height: 1.75;
+        }
+
+        p {
+          font-size: 15px;
+          color: $WiteBgColor;
+          opacity: .6;
+          line-height: 1.75;
+
+        }
+      }
+
+      .img-box {
+        margin-top: 30px;
+
+        img {
+          position: absolute;
+          width: 429px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+
+      .menu-box {
+        margin-top: 30px;
+
+        ul {
+          display: flex;
+          justify-content: center;
+          gap: 5px;
+
+          li {
+            a {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 166px;
+              height: 52px;
+              border-radius: 10px;
+              background-color: rgba(255, 255, 255, 0.09);
+
+              span {
+                color: $WiteBgColor;
+              }
+
+              &::after {
+                content: " >";
+                margin-left: 5px;
+                color: $WiteBgColor;
+              }
+            }
+
+            &:hover {
+              a {
+                span {
+                  text-decoration: underline;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// 별소스
+
+.sky {
+
+  .night {
+    .stars {
+      .ico-star {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        border-radius: 4px;
+        background-color: $WiteBgColor;
+      }
+    }
+  }
+
+}
+
+.ico-star-1 {
+  top: 30%;
+  left: 10%;
+  animation: clittering 2s infinite;
+}
+
+.ico-star-2 {
+  top: 10%;
+  left: 20%;
+  animation: clittering 3s infinite;
+}
+
+.ico-star-3 {
+  top: 25%;
+  left: 15%;
+  animation: clittering 5s infinite;
+}
+
+.ico-star-4 {
+  top: 40%;
+  right: 15%;
+  animation: clittering 2s infinite;
+}
+
+.ico-star-5 {
+  top: 43%;
+  right: 30%;
+  animation: clittering 4s infinite;
+}
+
+.ico-star-6 {
+  top: 73%;
+  right: 27%;
+  animation: clittering 1.8s infinite;
+}
+
+.ico-star-8 {
+  top: 65%;
+  left: 22%;
+  animation: clittering 3.5s infinite;
+}
+
+
+@keyframes clittering {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(0.9);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
+
+
+// 체크카드 박스 구현
+
+
+.check-box {
+  height: 1062px;
+
+  .ctt-box {
+    text-align: center;
+    padding-top: 150px;
+
+    .main-ctt {
+      h3 {
+        font-size: 40px;
+        font-weight: 600;
+
+
+      }
+
+      p {
+        font-size: 15px;
+        padding-top: 30px;
+      }
+    }
+
+    .btn {
+      display: flex;
+      justify-content: center;
+      padding-top: 30px;
+
+      a {
+        background-color: #f6f6f6;
+        border-radius: 10px;
+        font-size: 16px;
+        color: #333;
+        width: 258px;
+        height: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .txt:hover {
+        text-decoration: underline;
+      }
+
+      .icon {
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+// 체크카드 스와이퍼 
+
+.check-box {
+
+  .swiper-wrap {
+    position: relative;
+    max-width: 1080px;
+    margin: 0 auto;
+    margin-top: 100px;
+
+    .swiper {
+      width: 660px;
+      height: 475px;
+
+      .swiper-wrapper {
+        .swiper-slide {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          img {
+            display: block;
+            width: 220px;
+            transition: transform .3s;
+          }
+
+          &.swiper-slide-active {
+            z-index: 10;
+
+            img {
+              transform: scale(1.2);
+            }
+
+          }
+
+        }
+      }
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      &::after {
+        display: none;
+      }
+    }
+
+    .swiper-button-prev {
+      &::before {
+        content: url(../imgs/img-left.png);
+
+      }
+    }
+
+    .swiper-button-next {
+      &::before {
+        content: url(../imgs/img-right.png);
+
+      }
+    }
+
+  }
+}
+
+
+// it 박스 구현
+
+.it {
+  background-color: #f9f9f9;
+  padding-bottom: 100px;
+  position: relative;
+
+  .content {
+    padding-top: 160px;
+    text-align: center;
+
+    .title {
+      font-size: 40px;
+      font-weight: 500;
+      line-height: 1.35;
+    }
+
+    .it-bar {
+      width: 100px;
+      height: 2px;
+      background-color: $basicColor;
+      margin: 50px auto 140px;
+    }
+
+    .it-line {
+      height: 1px;
+      width: 100%;
+      background-color: #eee;
+      position: absolute;
+      top: 583px;
+    }
+
+    .info-box {
+      .img-box {
+        img {
+          position: relative;
+          width: 1020px;
+        }
+      }
+
+      .ctt-box {
+        max-width: 1020px;
+        margin: 0 auto;
+
+        ul {
+          display: flex;
+
+          li {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+
+            &:nth-child(3) {
+              flex-grow: 4;
+            }
+
+            strong {
+              display: block;
+              font-size: 18px;
+              margin: 45px 0 17px;
+            }
+
+            p {
+              font-size: 14px;
+              line-height: 24px;
+              color: #666;
+              font-weight: 200;
+            }
+
+          }
+        }
+      }
+    }
+  }
+}
+
+//footer 하단 구현 

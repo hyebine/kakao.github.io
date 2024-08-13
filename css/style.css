@@ -488,3 +488,319 @@ a {
 .banner-type.type5 .content .btn a {
   width: 258px;
 }
+
+.loan {
+  height: 930px;
+  position: relative;
+  overflow: hidden;
+}
+.loan:hover .sky .blue {
+  height: 0;
+}
+.loan .sky {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #333b58;
+}
+.loan .sky .blue {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #559cde;
+  transition: height 0.5s;
+}
+.loan .sky .moon {
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  left: calc(50% + 450px);
+  top: 200px;
+  overflow: hidden;
+}
+.loan .sky .moon .base {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  left: calc(50% + 450px);
+  background-color: #ffdc00;
+  transition: background-color 0.5s 0.5s;
+}
+.loan .sky .moon:hover .base {
+  background-color: #fff;
+}
+.loan .sky .moon:hover .shadow {
+  top: -23%;
+  left: -23%;
+  background-color: #333b58;
+}
+.loan .sky .moon .shadow {
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transform: top 0.5s 0.5s, left 0.5s 0.5s;
+}
+
+.loan .sky .content {
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 1;
+}
+.loan .sky .content .ctt-box {
+  padding-top: 160px;
+}
+.loan .sky .content .ctt-box h3 {
+  font-size: 40px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.75;
+}
+.loan .sky .content .ctt-box p {
+  font-size: 15px;
+  color: #fff;
+  opacity: 0.6;
+  line-height: 1.75;
+}
+.loan .sky .content .img-box {
+  margin-top: 30px;
+}
+.loan .sky .content .img-box img {
+  position: absolute;
+  width: 429px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.loan .sky .content .menu-box {
+  margin-top: 30px;
+}
+.loan .sky .content .menu-box ul {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+.loan .sky .content .menu-box ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 166px;
+  height: 52px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.09);
+}
+.loan .sky .content .menu-box ul li a span {
+  color: #fff;
+}
+.loan .sky .content .menu-box ul li a::after {
+  content: " >";
+  margin-left: 5px;
+  color: #fff;
+}
+.loan .sky .content .menu-box ul li:hover a span {
+  text-decoration: underline;
+}
+
+.sky .night .stars .ico-star {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.ico-star-1 {
+  top: 30%;
+  left: 10%;
+  animation: clittering 2s infinite;
+}
+
+.ico-star-2 {
+  top: 10%;
+  left: 20%;
+  animation: clittering 3s infinite;
+}
+
+.ico-star-3 {
+  top: 25%;
+  left: 15%;
+  animation: clittering 5s infinite;
+}
+
+.ico-star-4 {
+  top: 40%;
+  right: 15%;
+  animation: clittering 2s infinite;
+}
+
+.ico-star-5 {
+  top: 43%;
+  right: 30%;
+  animation: clittering 4s infinite;
+}
+
+.ico-star-6 {
+  top: 73%;
+  right: 27%;
+  animation: clittering 1.8s infinite;
+}
+
+.ico-star-8 {
+  top: 65%;
+  left: 22%;
+  animation: clittering 3.5s infinite;
+}
+
+@keyframes clittering {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
+.check-box {
+  height: 1062px;
+}
+.check-box .ctt-box {
+  text-align: center;
+  padding-top: 150px;
+}
+.check-box .ctt-box .main-ctt h3 {
+  font-size: 40px;
+  font-weight: 600;
+}
+.check-box .ctt-box .main-ctt p {
+  font-size: 15px;
+  padding-top: 30px;
+}
+.check-box .ctt-box .btn {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+}
+.check-box .ctt-box .btn a {
+  background-color: #f6f6f6;
+  border-radius: 10px;
+  font-size: 16px;
+  color: #333;
+  width: 258px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.check-box .ctt-box .btn .txt:hover {
+  text-decoration: underline;
+}
+.check-box .ctt-box .btn .icon {
+  margin-left: 10px;
+}
+
+.check-box .swiper-wrap {
+  position: relative;
+  max-width: 1080px;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+.check-box .swiper-wrap .swiper {
+  width: 660px;
+  height: 475px;
+}
+.check-box .swiper-wrap .swiper .swiper-wrapper .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.check-box .swiper-wrap .swiper .swiper-wrapper .swiper-slide img {
+  display: block;
+  width: 220px;
+  transition: transform 0.3s;
+}
+.check-box .swiper-wrap .swiper .swiper-wrapper .swiper-slide.swiper-slide-active {
+  z-index: 10;
+}
+.check-box .swiper-wrap .swiper .swiper-wrapper .swiper-slide.swiper-slide-active img {
+  transform: scale(1.2);
+}
+.check-box .swiper-wrap .swiper-button-prev::after,
+.check-box .swiper-wrap .swiper-button-next::after {
+  display: none;
+}
+.check-box .swiper-wrap .swiper-button-prev::before {
+  content: url(../imgs/img-left.png);
+}
+.check-box .swiper-wrap .swiper-button-next::before {
+  content: url(../imgs/img-right.png);
+}
+
+.it {
+  background-color: #f9f9f9;
+  padding-bottom: 100px;
+  position: relative;
+}
+.it .content {
+  padding-top: 160px;
+  text-align: center;
+}
+.it .content .title {
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+.it .content .it-bar {
+  width: 100px;
+  height: 2px;
+  background-color: #333;
+  margin: 50px auto 140px;
+}
+.it .content .it-line {
+  height: 1px;
+  width: 100%;
+  background-color: #eee;
+  position: absolute;
+  top: 583px;
+}
+.it .content .info-box .img-box img {
+  position: relative;
+  width: 1020px;
+}
+.it .content .info-box .ctt-box {
+  max-width: 1020px;
+  margin: 0 auto;
+}
+.it .content .info-box .ctt-box ul {
+  display: flex;
+}
+.it .content .info-box .ctt-box ul li {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.it .content .info-box .ctt-box ul li:nth-child(3) {
+  flex-grow: 4;
+}
+.it .content .info-box .ctt-box ul li strong {
+  display: block;
+  font-size: 18px;
+  margin: 45px 0 17px;
+}
+.it .content .info-box .ctt-box ul li p {
+  font-size: 14px;
+  line-height: 24px;
+  color: #666;
+  font-weight: 200;
+}
